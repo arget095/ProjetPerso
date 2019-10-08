@@ -15,15 +15,15 @@ namespace ProjetPerso.DAL
             User nicolas = new User();
             UserRepository service = new UserRepository();
 
-            //nicolas.Pseudo = "arget095";
-            //nicolas.FirstName = "nicolas";
-            //nicolas.LastName = "agro";
-            //nicolas.Password = "test1234=";
-            //nicolas.Mail = "nicolas.agro@hotmail.com";
+            nicolas.Pseudo = "arget095";
+            nicolas.FirstName = "nicolas";
+            nicolas.LastName = "agro";
+            nicolas.Password = "test1234=";
+            nicolas.Mail = "nicolas.agro@hotmail.com";
 
-            
 
-            //nicolas.Id =  service.Create(nicolas);
+
+            nicolas.Id = service.Create(nicolas);
 
 
 
