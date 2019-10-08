@@ -1,0 +1,5 @@
+﻿CREATE TABLE [dbo].[Country]
+(
+	[IdCountry] NVARCHAR(10) NOT NULL PRIMARY KEY UNIQUE, 
+    [Name] NVARCHAR(50) NOT NULL
+)
