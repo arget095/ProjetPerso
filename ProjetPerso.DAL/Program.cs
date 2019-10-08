@@ -12,17 +12,17 @@ namespace ProjetPerso.DAL
     {
         static void Main(string[] args)
         {
-            User ci = new User();
+            User nicolas = new User();
             UserRepository service = new UserRepository();
 
-            ci.Pseudo = "arget095";
-            ci.FirstName = "ci";
-            ci.LastName = "agro";
-            ci.Password = "test1234=";
-            ci.Mail = "ci.agro@hotmail.com";
+            nicolas.Pseudo = "arget095";
+            nicolas.FirstName = "nicolas";
+            nicolas.LastName = "agro";
+            nicolas.Password = "test1234=";
+            nicolas.Mail = "nicolas.agro@hotmail.com";
             
 
-            ci.Id = service.Create(ci);
+            nicolas.Id = service.Create(nicolas);
 
 
 
