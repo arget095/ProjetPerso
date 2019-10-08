@@ -25,7 +25,6 @@ namespace ProjetPerso.DAL
 
             //nicolas.Id =  service.Create(nicolas);
 
-            service.Get
 
 
 
