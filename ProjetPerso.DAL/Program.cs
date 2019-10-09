@@ -26,7 +26,7 @@ namespace ProjetPerso.DAL
 
 
             service.Get(1);
-
+            Console.WriteLine("je suis le meillieur");
             Console.ReadKey();
         }
     }
