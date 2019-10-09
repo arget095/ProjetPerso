@@ -14,19 +14,29 @@ namespace ProjetPerso.DAL
         {
             User nicolas = new User();
             UserRepository service = new UserRepository();
-
-            //nicolas.Pseudo = "arget095";
-            //nicolas.FirstName = "nicolas";
-            //nicolas.LastName = "agro";
+            #region create
+            //nicolas.Pseudo = "tasoeur";
+            //nicolas.FirstName = "oceane";
+            //nicolas.LastName = "calloens";
             //nicolas.Password = "test1234=";
-            //nicolas.Mail = "nicolas.agro@hotmail.com";
-
+            //nicolas.Mail = "oceane.calloens@hotmail.com";
 
             //nicolas.Id = service.Create(nicolas);
 
+            //Console.WriteLine(nicolas.Id);
+            //nicolas = service.Get(1);
 
-            service.Get(1);
-            Console.WriteLine("je suis le meillieur");
+            //foreach (var item in service.GetAll())
+            //{
+            //    nicolas = item;
+            //    Console.WriteLine(nicolas.Pseudo);
+            //}
+
+            #endregion
+
+
+
+            //Console.WriteLine(nicolas.LastName);
             Console.ReadKey();
         }
     }

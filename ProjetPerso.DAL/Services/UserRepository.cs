@@ -35,7 +35,7 @@ namespace ProjetPerso.DAL.Services
 
         public User Get(int id)
         {
-            Command cmd = new Command("SELECT * FROM User WHERE Id = @Id");
+            Command cmd = new Command("SELECT * FROM [User] WHERE IdUser = @Id");
             cmd.AddParameter("@Id", id);
 
             return _Connection.ExecuteReader(cmd, DbToEntityMapper.UserMapper).SingleOrDefault();
@@ -43,7 +43,7 @@ namespace ProjetPerso.DAL.Services
 
         public IEnumerable<User> GetAll()
         {
-            Command cmd = new Command("SELECT * FROM User");
+            Command cmd = new Command("SELECT * FROM [User]");
 
             return _Connection.ExecuteReader(cmd, DbToEntityMapper.UserMapper);
         }
@@ -55,11 +55,12 @@ namespace ProjetPerso.DAL.Services
 
         public void Delete(int id)
         {
-            Command cmd = new Command("DELETE FROM User WHERE Id = @Id");
+            Command cmd = new Command("DELETE FROM [User] WHERE IdUser = @Id");
             cmd.AddParameter("@Id", id);
 
             _Connection.ExecuteNonQuery(cmd);
         }
+
 
     }
 }
