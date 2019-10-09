@@ -12,9 +12,8 @@ namespace ProjetPerso.DAL
     {
         static void Main(string[] args)
         {
-            User nicolas = new User();
-            UserRepository service = new UserRepository();
-            #region create
+
+            #region test userrepository
             //nicolas.Pseudo = "tasoeur";
             //nicolas.FirstName = "oceane";
             //nicolas.LastName = "calloens";
@@ -31,12 +30,14 @@ namespace ProjetPerso.DAL
             //    nicolas = item;
             //    Console.WriteLine(nicolas.Pseudo);
             //}
-
+            //User nicolas = new User();
+            //UserRepository service = new UserRepository();
+            //Console.WriteLine(nicolas.LastName);
             #endregion
 
 
 
-            //Console.WriteLine(nicolas.LastName);
+           
             Console.ReadKey();
         }
     }
