@@ -17,6 +17,5 @@ namespace ProjetPerso.DAL.Entities
         public int IdCity { get; set; }
         public int Admin { get; set; }
         public int IdCategory { get; set; }
-        public bool Actief { get; set; }
     }
 }

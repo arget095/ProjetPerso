@@ -34,10 +34,38 @@ namespace ProjetPerso.DAL
             //UserRepository service = new UserRepository();
             //Console.WriteLine(nicolas.LastName);
             #endregion
+            #region test Countryrepository
+            //Country pays = new Country();
+            //CountryRepository service = new CountryRepository();
 
+            //pays = service.Get("BEL");
 
+            //Console.WriteLine(pays.Name);
+            //Console.WriteLine(); Console.WriteLine();
+            //foreach (var item in service.GetAll())
+            //{
+            //    pays = item;
+            //    Console.WriteLine(pays.Name);
+            //}
 
-           
+            #endregion
+            #region test CityRepository
+            //City ville = new City();
+            //CityRepository service = new CityRepository();
+
+            //ville = service.Get("1000");
+            //Console.WriteLine(ville.Name);
+
+            //Console.WriteLine();
+            //Console.WriteLine();
+
+            //foreach (var item in service.GetAll())
+            //{
+            //    ville = item;
+            //    Console.WriteLine(ville.Name);
+            //}
+            #endregion
+
             Console.ReadKey();
         }
     }

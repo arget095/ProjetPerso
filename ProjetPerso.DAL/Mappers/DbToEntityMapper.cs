@@ -46,5 +46,25 @@ namespace ProjetPerso.DAL.Mappers
                 IdUser = (int)reader["IdUser"]
             };
         }
+
+        public static Country CountryMapper(IDataReader reader)
+        {
+            return new Country()
+            {
+                Id = reader["IdCountry"].ToString(),
+                Name = reader["Name"].ToString()
+            };
+        }
+
+        public static City CityMapper(IDataReader reader)
+        {
+            return new City()
+            {
+                Id = (int)reader["IdCity"],
+                PostalCode = reader["PostalCode"].ToString(),
+                Name = reader["Name"].ToString(),
+                IdCountry = reader["IdCountry"].ToString()
+            };
+        }
     }
 }
