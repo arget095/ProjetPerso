@@ -49,4 +49,25 @@
     <Property Name="ParentElementType" Value="SqlTable" />
     <Property Name="NewName" Value="IdCategory" />
   </Operation>
+  <Operation Name="Rename Refactor" Key="0d5372c3-1c54-48bf-89ff-637ea0d995b5" ChangeDateTime="10/10/2019 14:18:04">
+    <Property Name="ElementName" Value="[dbo].[Loisir].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Loisir]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="IdLoisir" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="a76f9276-9174-4e4d-ac29-00f44ebae571" ChangeDateTime="10/10/2019 14:21:39">
+    <Property Name="ElementName" Value="[dbo].[Event].[IdCategory]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Event]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="IdLoisir" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="9864f8bd-23e8-4453-92a1-99ebf86303e3" ChangeDateTime="10/10/2019 14:54:44">
+    <Property Name="ElementName" Value="[dbo].[Loisir].[IdCategory]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Loisir]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="NameCategory" />
+  </Operation>
 </Operations>

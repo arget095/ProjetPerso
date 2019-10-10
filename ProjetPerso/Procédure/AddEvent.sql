@@ -4,7 +4,7 @@
 	@Admin int,
 	@IdCountry INT,
 	@IdCity int,
-	@IdCategory int
+	@IdLoisir int
 AS
-	insert into [Event](Name,Time,Admin,IdCountry,IdCity,IdCategory)
-	values(@Name,@Time,@Admin,@IdCountry,@IdCity,@IdCategory)
+	insert into [Event](Name,Time,Admin,IdCountry,IdCity,IdLoisir)
+	values(@Name,@Time,@Admin,@IdCountry,@IdCity,@IdLoisir)

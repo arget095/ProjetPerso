@@ -7,9 +7,9 @@
     [Admin] INT NOT NULL, 
     [IdCity] INT NOT NULL, 
     [IdCountry] NVARCHAR(10) NOT NULL,
-	[IdCategory] INT NOT NULL, 
+	[IdLoisir] INT NOT NULL, 
     CONSTRAINT [FK_Event_IdCountry] FOREIGN KEY ([IdCountry]) REFERENCES [Country]([IdCountry]),
 	CONSTRAINT [FK_Event_IdCity] FOREIGN KEY ([IdCity]) REFERENCES [City]([IdCity]),
 	CONSTRAINT [FK_Event_Admin] FOREIGN KEY ([Admin]) REFERENCES [User]([IdUser]),
-	CONSTRAINT [FK_Event_IdCategory] FOREIGN KEY ([IdCategory]) REFERENCES [Category]([IdCategory]),
+	CONSTRAINT [FK_Event_IdLoisir] FOREIGN KEY ([IdLoisir]) REFERENCES [Loisir]([IdLoisir]),
 )

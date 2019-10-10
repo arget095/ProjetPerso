@@ -72,11 +72,9 @@
     <Build Include="Procédure\AddEvent.sql" />
     <Build Include="Procédure\AddParticipant.sql" />
     <Build Include="Table\Category.sql" />
+    <Build Include="Table\Loisir.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="ProjetPerso.refactorlog" />
-  </ItemGroup>
-  <ItemGroup>
-    <PostDeploy Include="Initial Data\Role.PostDeployment1.sql" />
   </ItemGroup>
 </Project>
