@@ -12,8 +12,10 @@ namespace ProjetPerso.DAL
     {
         static void Main(string[] args)
         {
-
+            #region test avant event
             #region test userrepository
+            //User nicolas = new User();
+            //UserRepository service = new UserRepository();
             //nicolas.Pseudo = "tasoeur";
             //nicolas.FirstName = "oceane";
             //nicolas.LastName = "calloens";
@@ -30,8 +32,7 @@ namespace ProjetPerso.DAL
             //    nicolas = item;
             //    Console.WriteLine(nicolas.Pseudo);
             //}
-            //User nicolas = new User();
-            //UserRepository service = new UserRepository();
+
             //Console.WriteLine(nicolas.LastName);
             #endregion
             #region test Countryrepository
@@ -64,6 +65,75 @@ namespace ProjetPerso.DAL
             //    ville = item;
             //    Console.WriteLine(ville.Name);
             //}
+            #endregion
+            #region test LoisirRepository
+            //Loisir jeu = new Loisir();
+            //LoisirRepository service = new LoisirRepository();
+
+            //jeu = service.Get(3);
+
+            //Console.WriteLine($"{jeu.Name} {jeu.NameCategory}");
+            //Console.WriteLine();
+            //Console.WriteLine();
+
+            //foreach (var item in service.GetAll())
+            //{
+            //    jeu = item;
+            //    Console.WriteLine($"{jeu.Name} {jeu.NameCategory}");
+            //}
+
+            #endregion
+            #region test CategoryRepository
+            //Category gorie = new Category();
+            //CategoryRepository service = new CategoryRepository();
+
+            //gorie = service.Get(1);
+
+            //Console.WriteLine(gorie.Name);
+            //Console.WriteLine();
+            //Console.WriteLine();
+
+            //foreach (var item in service.GetAll())
+            //{
+            //    gorie = item;
+            //    Console.WriteLine(gorie.Name);
+            //}
+
+            #endregion
+            #endregion
+            #region test event
+
+            Event even = new Event();
+            User moi = new User();
+            Country pays = new Country();
+            City hunter = new City();
+            Loisir activite = new Loisir();
+
+            UserRepository userserv = new UserRepository();
+            EventRepository eventserv = new EventRepository();
+            CountryRepository countryserv = new CountryRepository();
+            CityRepository cityserv = new CityRepository();
+            LoisirRepository loisirserv = new LoisirRepository();
+
+            //moi = userserv.Get(1);
+            //pays = countryserv.Get("BEL");
+            //hunter = cityserv.Get("4300");
+            //activite = loisirserv.Get(8);
+
+            //even.Admin = moi.Id;
+            //even.Name = "MonPremierEvent";
+            //even.Time = new DateTime(2019, 10, 11, 15, 30, 00);
+            //even.IdCountry = pays.Id;
+            //even.IdCityPostalCode = hunter.PostalCode;
+            //even.IdLoisir = activite.IdLoisir;
+
+            //even.Id = eventserv.Create(even);
+            //Console.WriteLine(even.Id);
+
+
+            even = eventserv.Get(15);
+
+            Console.WriteLine(even.Name);
             #endregion
 
             Console.ReadKey();

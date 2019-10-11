@@ -30,10 +30,10 @@ namespace ProjetPerso.DAL.Mappers
                 Id = (int)reader["IdEvent"],
                 Name = reader["Name"].ToString(),
                 Participant = (int)reader["Participant"],
-                IdCountry = (int)reader["IdCountry"],
-                IdCity = (int)reader["IdCity"],
+                IdCountry = reader["IdCountry"].ToString(),
+                IdCityPostalCode = reader["IdCityPostalCode"].ToString(),
                 Admin = (int)reader["Admin"],
-                IdCategory = (int)reader["IdCategory"],
+                IdLoisir = (int)reader["IdLoisir"],
                 Time = (DateTime)reader["Time"]
             };
         }
@@ -64,6 +64,25 @@ namespace ProjetPerso.DAL.Mappers
                 PostalCode = reader["PostalCode"].ToString(),
                 Name = reader["Name"].ToString(),
                 IdCountry = reader["IdCountry"].ToString()
+            };
+        }
+
+        public static Loisir LoisirMapper(IDataReader reader)
+        {
+            return new Loisir()
+            {
+                IdLoisir = (int)reader["IdLoisir"],
+                Name = reader["Name"].ToString(),
+                NameCategory = reader["NameCategory"].ToString()
+            };
+        }
+
+        public static Category CategoryMapper(IDataReader reader)
+        {
+            return new Category()
+            {
+                IdCategory = (int)reader["IdCategory"],
+                Name = reader["Name"].ToString()
             };
         }
     }

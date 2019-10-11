@@ -13,9 +13,9 @@ namespace ProjetPerso.DAL.Entities
         public string Name { get; set; }
         public int Participant { get; set; }
         public DateTime Time { get; set; }
-        public int IdCountry { get; set; }
-        public int IdCity { get; set; }
+        public string IdCountry { get; set; }
+        public string IdCityPostalCode { get; set; }
         public int Admin { get; set; }
-        public int IdCategory { get; set; }
+        public int IdLoisir { get; set; }
     }
 }

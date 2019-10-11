@@ -2,5 +2,5 @@
 	@IdUser INT,
 	@IdEvent int
 AS
-	insert into [Participant](IdUser,IdEvent)
+	insert into [Participant](IdUser,IdEvent) output inserted.Id
 	values(@IdUser,@IdEvent)

@@ -16,7 +16,7 @@ namespace ProjetPerso.DAL.Services
 
         public EventRepository()
         {
-            _Connection = new Connection(@"Server=TECHNOBEL,Database=ProjetPerso,User Id=sa,Password=test1234=",
+            _Connection = new Connection(@"Data Source=TECHNOBEL\;Initial Catalog=ProjetPerso;User ID=sa;Password=test1234=",
                 "System.Data.SqlClient");
         }
 
@@ -28,15 +28,15 @@ namespace ProjetPerso.DAL.Services
             cmd.AddParameter("@Time",entity.Time);
             cmd.AddParameter("@Admin",entity.Admin);
             cmd.AddParameter("IdCountry",entity.IdCountry);
-            cmd.AddParameter("IdCity",entity.IdCity);
-            cmd.AddParameter("IdCategory",entity.IdCategory);
+            cmd.AddParameter("IdCityPostalCode", entity.IdCityPostalCode);
+            cmd.AddParameter("IdLoisir",entity.IdLoisir);
 
             return (int)_Connection.ExecuteScalar(cmd);
         }
 
         public Event Get(int id)
         {
-            Command cmd = new Command("SELECT * FROM Event WHERE Id = @Id");
+            Command cmd = new Command("SELECT * FROM Event WHERE IdEvent = @Id");
             cmd.AddParameter("@Id", id);
 
             return _Connection.ExecuteReader(cmd, DbToEntityMapper.EventMapper).SingleOrDefault();

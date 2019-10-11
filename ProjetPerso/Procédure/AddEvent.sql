@@ -2,9 +2,9 @@
 	@Name NVARCHAR(50),
 	@Time DATETIME2,
 	@Admin int,
-	@IdCountry INT,
-	@IdCity int,
+	@IdCountry Nvarchar(10),
+	@IdCityPostalCode NVARCHAR(50),
 	@IdLoisir int
 AS
-	insert into [Event](Name,Time,Admin,IdCountry,IdCity,IdLoisir)
-	values(@Name,@Time,@Admin,@IdCountry,@IdCity,@IdLoisir)
+	insert into [Event](Name,Time,Admin,IdCountry,IdCityPostalCode,IdLoisir) output inserted.IdEvent
+	values(@Name,@Time,@Admin,@IdCountry,@IdCityPostalCode,@IdLoisir)
