@@ -10,7 +10,7 @@ namespace ProjetPerso.API.Controllers
     {
         public ActionResult Index()
         {
-            ViewBag.Title = "Home Page";
+            ViewBag.Title = "choucroute";
 
             return View();
         }
