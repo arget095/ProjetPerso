@@ -10,7 +10,7 @@ using ToolBox;
 
 namespace ProjetPerso.DAL.Services
 {
-    public class EventRepository : IRepository<int,Event>
+    public class EventRepository
     {
         private Connection _Connection { get; set; }
 
@@ -22,6 +22,7 @@ namespace ProjetPerso.DAL.Services
 
         public int Create(Event entity)
         {
+            ParticipantRepository service = new ParticipantRepository();
             Command cmd = new Command("AddEvent", true);
 
             cmd.AddParameter("@Name",entity.Name);
@@ -31,7 +32,10 @@ namespace ProjetPerso.DAL.Services
             cmd.AddParameter("IdCityPostalCode", entity.IdCityPostalCode);
             cmd.AddParameter("IdLoisir",entity.IdLoisir);
 
-            return (int)_Connection.ExecuteScalar(cmd);
+            int id = (int)_Connection.ExecuteScalar(cmd);
+
+            service.CreatePartiAuto(id,entity.Admin);
+            return id;
         }
 
         public Event Get(int id)
@@ -48,16 +52,32 @@ namespace ProjetPerso.DAL.Services
             return _Connection.ExecuteReader(cmd, DbToEntityMapper.EventMapper);
         }
 
-        public Event Update(Event entity)
+        public void Update(int id,bool actif)
         {
-            throw new NotImplementedException();
+            Event entity = Get(id);
+            Command cmd = new Command("Update Event Set Participant = @plus_un WHERE IdEvent = @Id");
+            if (actif)
+            {
+                entity.Participant++;             
+                cmd.AddParameter("@plus_un", entity.Participant);
+                cmd.AddParameter("@Id", id);
+            }
+            else if (!actif)
+            {
+                entity.Participant--;
+                cmd.AddParameter("@plus_un", entity.Participant);
+                cmd.AddParameter("@Id", id);
+            }
+            _Connection.ExecuteNonQuery(cmd);
         }
 
         public void Delete(int id)
         {
-            Command cmd = new Command("DELETE FROM Event WHERE Id = @Id");
+            ParticipantRepository service = new ParticipantRepository();
+            Command cmd = new Command("DELETE FROM Event WHERE IdEvent = @Id");
             cmd.AddParameter("@Id", id);
 
+            service.DeleteAuto(id);
             _Connection.ExecuteNonQuery(cmd);
         }
     }

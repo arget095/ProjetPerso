@@ -14,8 +14,8 @@ namespace ProjetPerso.DAL
         {
             #region test avant event
             #region test userrepository
-            //User nicolas = new User();
-            //UserRepository service = new UserRepository();
+            User nicolas = new User();
+            UserRepository service = new UserRepository();
             //nicolas.Pseudo = "tasoeur";
             //nicolas.FirstName = "oceane";
             //nicolas.LastName = "calloens";
@@ -103,26 +103,26 @@ namespace ProjetPerso.DAL
             #endregion
             #region test event
 
-            Event even = new Event();
-            User moi = new User();
-            Country pays = new Country();
-            City hunter = new City();
-            Loisir activite = new Loisir();
+            //Event even = new Event();
+            //User moi = new User();
+            //Country pays = new Country();
+            //City hunter = new City();
+            //Loisir activite = new Loisir();
 
-            UserRepository userserv = new UserRepository();
-            EventRepository eventserv = new EventRepository();
-            CountryRepository countryserv = new CountryRepository();
-            CityRepository cityserv = new CityRepository();
-            LoisirRepository loisirserv = new LoisirRepository();
+            //UserRepository userserv = new UserRepository();
+            //EventRepository eventserv = new EventRepository();
+            //CountryRepository countryserv = new CountryRepository();
+            //CityRepository cityserv = new CityRepository();
+            //LoisirRepository loisirserv = new LoisirRepository();
 
-            //moi = userserv.Get(1);
+            //moi = userserv.Get(2);
             //pays = countryserv.Get("BEL");
-            //hunter = cityserv.Get("4300");
-            //activite = loisirserv.Get(8);
+            //hunter = cityserv.Get("1000");
+            //activite = loisirserv.Get(5);
 
             //even.Admin = moi.Id;
-            //even.Name = "MonPremierEvent";
-            //even.Time = new DateTime(2019, 10, 11, 15, 30, 00);
+            //even.Name = "MonTroisiemeEvent";
+            //even.Time = new DateTime(2019, 10, 14, 15, 30, 00);
             //even.IdCountry = pays.Id;
             //even.IdCityPostalCode = hunter.PostalCode;
             //even.IdLoisir = activite.IdLoisir;
@@ -131,10 +131,37 @@ namespace ProjetPerso.DAL
             //Console.WriteLine(even.Id);
 
 
-            even = eventserv.Get(15);
+            //even = eventserv.Get(15);
 
-            Console.WriteLine(even.Name);
+            //Console.WriteLine(even.Name);
             #endregion
+            #region test Participant
+
+            //User moi = new User();
+            //Event eventt = new Event();
+            //Participant parti = new Participant();
+
+            //UserRepository userserv = new UserRepository();
+            //EventRepository eventserv = new EventRepository();
+            //ParticipantRepository partiserv = new ParticipantRepository();
+
+            //moi = userserv.Get(4);
+            //eventt = eventserv.Get(17);
+            //Console.WriteLine(moi.Id);
+            //parti.IdEvent = eventt.Id;
+            //parti.IdUser = moi.Id;
+
+            //partiserv.Create(parti);
+            //parti = partiserv.Get(1);
+            //Console.WriteLine(parti.Id);
+            //foreach (var item in partiserv.GetAll(16))
+            //{
+            //    parti = item;
+            //    Console.WriteLine($"{parti.Id} {parti.IdEvent} {parti.IdUser}");
+            //}
+            //partiserv.Delete(17, 4);
+            #endregion
+
 
             Console.ReadKey();
         }

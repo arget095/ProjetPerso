@@ -43,7 +43,8 @@ namespace ProjetPerso.DAL.Mappers
             return new Participant()
             {
                 IdEvent = (int)reader["IdEvent"],
-                IdUser = (int)reader["IdUser"]
+                IdUser = (int)reader["IdUser"],
+                Id = (int)reader["Id"]
             };
         }
 

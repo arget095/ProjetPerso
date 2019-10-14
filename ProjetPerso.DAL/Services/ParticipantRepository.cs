@@ -10,37 +10,41 @@ using ToolBox;
 
 namespace ProjetPerso.DAL.Services
 {
-    public class ParticipantRepository : IRepository<int, Participant>
+    public class ParticipantRepository
     {
         private Connection _Connection { get; set; }
 
         public ParticipantRepository()
         {
-            _Connection = new Connection(@"Server=TECHNOBEL,Database=ProjetPerso,User Id=sa,Password=test1234=",
+            _Connection = new Connection(@"Data Source=TECHNOBEL\;Initial Catalog=ProjetPerso;User ID=sa;Password=test1234=",
                 "System.Data.SqlClient");
         }
 
         public int Create(Participant entity)
         {
+            EventRepository service = new EventRepository();
             Command cmd = new Command("AddParticipant", true);
 
             cmd.AddParameter("@IdEvent", entity.IdEvent);
             cmd.AddParameter("@IdUser", entity.IdUser);
+
+            service.Update(entity.IdEvent, true);
 
             return (int)_Connection.ExecuteScalar(cmd);
         }
 
         public Participant Get(int id)
         {
-            Command cmd = new Command("SELECT * FROM Participant WHERE IdEvent = @IdEvent");//a corriger
-            cmd.AddParameter("@IdEvent", id);
+            Command cmd = new Command("SELECT * FROM Participant WHERE Id = @Id");//a corriger
+            cmd.AddParameter("@Id", id);
 
             return _Connection.ExecuteReader(cmd, DbToEntityMapper.ParticipantMapper).SingleOrDefault();
         }
 
-        public IEnumerable<Participant> GetAll()
+        public IEnumerable<Participant> GetAll(int id)
         {
-            Command cmd = new Command("SELECT * FROM Participant");
+            Command cmd = new Command("SELECT * FROM Participant WHERE IdEvent = @Id");
+            cmd.AddParameter("@Id", id);
             return _Connection.ExecuteReader(cmd, DbToEntityMapper.ParticipantMapper);
         }
 
@@ -49,11 +53,30 @@ namespace ProjetPerso.DAL.Services
             throw new NotImplementedException();
         }
 
-        public void Delete(int id)
+        public void Delete(int ide,int idu)
         {
-            Command cmd = new Command("SELECT * FROM Participant WHERE IdEvent = @IdEvent");//a corriger
-            cmd.AddParameter("@IdEvent", id);
+            EventRepository service = new EventRepository();
+            Command cmd = new Command("DELETE FROM Participant WHERE IdUser = @IdUser and IdEvent = @IdEvent");
+            cmd.AddParameter("@IdEvent", ide);
+            cmd.AddParameter("@IdUser", idu);
 
+            service.Update(ide, false);
+            _Connection.ExecuteNonQuery(cmd);
+        }
+        public int CreatePartiAuto(int idevent,int iduser)
+        {
+            Command cmd = new Command("AddParticipant", true);
+
+            cmd.AddParameter("@IdEvent", idevent);
+            cmd.AddParameter("@IdUser", iduser);
+
+            return (int)_Connection.ExecuteScalar(cmd);
+        }
+        
+        public void DeleteAuto(int idEvent)
+        {
+            Command cmd = new Command("DELETE FROM Participant WHERE IdEvent = @IdEvent");
+            cmd.AddParameter("@IdEvent", idEvent);
             _Connection.ExecuteNonQuery(cmd);
         }
     }
