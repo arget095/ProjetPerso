@@ -162,7 +162,6 @@ namespace ProjetPerso.DAL
             //partiserv.Delete(17, 4);
             #endregion
 
-
             Console.ReadKey();
         }
     }
