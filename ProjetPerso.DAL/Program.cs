@@ -14,8 +14,8 @@ namespace ProjetPerso.DAL
         {
             #region test avant event
             #region test userrepository
-            UserRepository service = new UserRepository();
-            User User1 = new User();
+            //UserRepository service = new UserRepository();
+            //User User1 = new User();
 
             //User1.Pseudo = "Chouchou";
             //User1.FirstName = "Goran";
@@ -110,20 +110,20 @@ namespace ProjetPerso.DAL
             //City hunter = new City();
             //Loisir activite = new Loisir();
 
-            //UserRepository userserv = new UserRepository();
             //EventRepository eventserv = new EventRepository();
+            //UserRepository userserv = new UserRepository();
             //CountryRepository countryserv = new CountryRepository();
             //CityRepository cityserv = new CityRepository();
             //LoisirRepository loisirserv = new LoisirRepository();
 
-            //moi = userserv.Get(2);
+            //moi = userserv.Get(3);
             //pays = countryserv.Get("BEL");
             //hunter = cityserv.Get("1000");
-            //activite = loisirserv.Get(5);
+            //activite = loisirserv.Get(1);
 
             //even.Admin = moi.Id;
-            //even.Name = "MonTroisiemeEvent";
-            //even.Time = new DateTime(2019, 10, 14, 15, 30, 00);
+            //even.Name = "MonPremierEventMaison";
+            //even.Time = new DateTime(2019, 10, 16, 15, 30,00);
             //even.IdCountry = pays.Id;
             //even.IdCityPostalCode = hunter.PostalCode;
             //even.IdLoisir = activite.IdLoisir;
@@ -132,27 +132,27 @@ namespace ProjetPerso.DAL
             //Console.WriteLine(even.Id);
 
 
-            //even = eventserv.Get(15);
+            //even = eventserv.Get(1);
 
             //Console.WriteLine(even.Name);
             #endregion
             #region test Participant
 
-            //User moi = new User();
-            //Event eventt = new Event();
-            //Participant parti = new Participant();
+            User moi = new User();
+            Event eventt = new Event();
+            Participant parti = new Participant();
 
-            //UserRepository userserv = new UserRepository();
-            //EventRepository eventserv = new EventRepository();
-            //ParticipantRepository partiserv = new ParticipantRepository();
+            UserRepository userserv = new UserRepository();
+            EventRepository eventserv = new EventRepository();
+            ParticipantRepository partiserv = new ParticipantRepository();
 
-            //moi = userserv.Get(4);
-            //eventt = eventserv.Get(17);
-            //Console.WriteLine(moi.Id);
-            //parti.IdEvent = eventt.Id;
-            //parti.IdUser = moi.Id;
+            moi = userserv.Get(5);
+            eventt = eventserv.Get(1);
+            Console.WriteLine(moi.Id);
+            parti.IdEvent = eventt.Id;
+            parti.IdUser = moi.Id;
 
-            //partiserv.Create(parti);
+            partiserv.Create(parti);
             //parti = partiserv.Get(1);
             //Console.WriteLine(parti.Id);
             //foreach (var item in partiserv.GetAll(16))
