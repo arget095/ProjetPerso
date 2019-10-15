@@ -6,5 +6,5 @@ values ('Bowling','Loisir'),
 	   ('Tennis','Sport'),
 	   ('Natation','Sport'),
 	   ('Musée','Tourisme'),
-	   ('Cimetière','Tourisme'),
+	   ('Morgue','Tourisme'),
 	   ('Shopping','Tourisme')
