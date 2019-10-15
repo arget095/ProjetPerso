@@ -14,26 +14,27 @@ namespace ProjetPerso.DAL
         {
             #region test avant event
             #region test userrepository
-            User nicolas = new User();
             UserRepository service = new UserRepository();
-            //nicolas.Pseudo = "tasoeur";
-            //nicolas.FirstName = "oceane";
-            //nicolas.LastName = "calloens";
-            //nicolas.Password = "test1234=";
-            //nicolas.Mail = "oceane.calloens@hotmail.com";
+            User User1 = new User();
 
-            //nicolas.Id = service.Create(nicolas);
+            //User1.Pseudo = "Chouchou";
+            //User1.FirstName = "Goran";
+            //User1.LastName = "Nimegeers";
+            //User1.Password = "test1234=";
+            //User1.Mail = "Goran.Nimegeers@hotmail.com";
 
-            //Console.WriteLine(nicolas.Id);
-            //nicolas = service.Get(1);
+            //User1.Id = service.Create(User1);
+
+            //Console.WriteLine(User1.Id);
+            //User1 = service.Get(3);
 
             //foreach (var item in service.GetAll())
             //{
-            //    nicolas = item;
-            //    Console.WriteLine(nicolas.Pseudo);
+            //    User1 = item;
+            //    Console.WriteLine(User1.Pseudo);
             //}
 
-            //Console.WriteLine(nicolas.LastName);
+            //Console.WriteLine(User1.LastName);
             #endregion
             #region test Countryrepository
             //Country pays = new Country();
