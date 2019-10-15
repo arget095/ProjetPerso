@@ -138,21 +138,21 @@ namespace ProjetPerso.DAL
             #endregion
             #region test Participant
 
-            User moi = new User();
-            Event eventt = new Event();
-            Participant parti = new Participant();
+            //User moi = new User();
+            //Event eventt = new Event();
+            //Participant parti = new Participant();
 
-            UserRepository userserv = new UserRepository();
-            EventRepository eventserv = new EventRepository();
-            ParticipantRepository partiserv = new ParticipantRepository();
+            //UserRepository userserv = new UserRepository();
+            //EventRepository eventserv = new EventRepository();
+            //ParticipantRepository partiserv = new ParticipantRepository();
 
-            moi = userserv.Get(5);
-            eventt = eventserv.Get(1);
-            Console.WriteLine(moi.Id);
-            parti.IdEvent = eventt.Id;
-            parti.IdUser = moi.Id;
+            //moi = userserv.Get(5);
+            //eventt = eventserv.Get(1);
+            //Console.WriteLine(moi.Id);
+            //parti.IdEvent = eventt.Id;
+            //parti.IdUser = moi.Id;
 
-            partiserv.Create(parti);
+            //partiserv.Create(parti);
             //parti = partiserv.Get(1);
             //Console.WriteLine(parti.Id);
             //foreach (var item in partiserv.GetAll(16))
