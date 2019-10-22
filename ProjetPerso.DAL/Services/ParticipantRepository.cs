@@ -16,11 +16,10 @@ namespace ProjetPerso.DAL.Services
         public ParticipantRepository()
         {
             #region sql formation
-            /*_Connection = new Connection(@"Data Source=TECHNOBEL\;Initial Catalog=ProjetPerso;User ID=sa;Password=test1234=",
-                "System.Data.SqlClient");*/
+            _Connection = new Connection(@"Data Source=TECHNOBEL\;Initial Catalog=ProjetPerso;User ID=sa;Password=test1234=","System.Data.SqlClient");
             #endregion
             #region sql maison
-            _Connection = new Connection(@"Data Source = DESKTOP-8OP2MN3; Initial Catalog = ProjetPerso; Integrated Security = True", "System.Data.SqlClient");
+            //_Connection = new Connection(@"Data Source = DESKTOP-8OP2MN3; Initial Catalog = ProjetPerso; Integrated Security = True", "System.Data.SqlClient");
             #endregion
         }
 
@@ -50,11 +49,6 @@ namespace ProjetPerso.DAL.Services
             Command cmd = new Command("SELECT * FROM Participant WHERE IdEvent = @Id");
             cmd.AddParameter("@Id", id);
             return _Connection.ExecuteReader(cmd, DbToEntityMapper.ParticipantMapper);
-        }
-
-        public Participant Update(Participant entity)
-        {
-            throw new NotImplementedException();
         }
 
         public void Delete(int ide,int idu)

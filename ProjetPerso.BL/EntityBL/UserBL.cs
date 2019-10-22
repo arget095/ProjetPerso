@@ -1,13 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace ProjetPerso.API.Models
+namespace ProjetPerso.BL.EntityBL
 {
-    public class UserApi
+    public class UserBL
     {
-        
         public int Id { get; set; }
         public string Pseudo { get; set; }
         public string FirstName { get; set; }

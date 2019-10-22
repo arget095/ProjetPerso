@@ -16,11 +16,10 @@ namespace ProjetPerso.DAL.Services
         public UserRepository()
         {
             #region sql formation
-            /*_Connection = new Connection(@"Data Source=TECHNOBEL\;Initial Catalog=ProjetPerso;User ID=sa;Password=test1234=",
-                "System.Data.SqlClient");*/
+            _Connection = new Connection(@"Data Source=TECHNOBEL\;Initial Catalog=ProjetPerso;User ID=sa;Password=test1234=", "System.Data.SqlClient");
             #endregion
             #region sql maison
-            _Connection = new Connection(@"Data Source = DESKTOP-8OP2MN3; Initial Catalog = ProjetPerso; Integrated Security = True", "System.Data.SqlClient");
+            //_Connection = new Connection(@"Data Source = DESKTOP-8OP2MN3; Initial Catalog = ProjetPerso; Integrated Security = True", "System.Data.SqlClient");
             #endregion
         }
 
@@ -52,9 +51,22 @@ namespace ProjetPerso.DAL.Services
             return _Connection.ExecuteReader(cmd, DbToEntityMapper.UserMapper);
         }
 
-        public User Update(User entity)
+        public void UpdateMail(string pseudo,string newmail)
         {
-            throw new NotImplementedException();
+            Command cmd = new Command("Update User Set Mail = @Newmail where Pseudo = @pseudo");
+            cmd.AddParameter("@Newmail", newmail);
+            cmd.AddParameter("@pseudo", pseudo);
+
+            _Connection.ExecuteNonQuery(cmd);
+        }
+
+        public void UpdatePassword(string pseudo, string newpassword)
+        {
+            Command cmd = new Command("Update User Set Password = @Newpassword where Pseudo = @pseudo");
+            cmd.AddParameter("@Newpassword", newpassword);
+            cmd.AddParameter("@pseudo", pseudo);
+
+            _Connection.ExecuteNonQuery(cmd);
         }
 
         public void Delete(int id)
@@ -64,7 +76,18 @@ namespace ProjetPerso.DAL.Services
 
             _Connection.ExecuteNonQuery(cmd);
         }
+        public bool CheckUserByPseudoAndPassword(string pseudo,string password)
+        {
+            Command cmd = new Command("SELECT * FROM [User] where Pseudo = @pseudo and Password = @password");
+            cmd.AddParameter("@pseudo", pseudo);
+            cmd.AddParameter("@password", password);
 
+            IEnumerable<User> list = _Connection.ExecuteReader(cmd, DbToEntityMapper.UserMapper);
+
+            if (list.Count() > 0)return true;
+
+            return false;
+        }
 
     }
 }
