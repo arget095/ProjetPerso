@@ -1,5 +1,4 @@
 ﻿using ProjetPerso.DAL.Entities;
-using ProjetPerso.DAL.Interfaces;
 using ProjetPerso.DAL.Mappers;
 using System;
 using System.Collections.Generic;
@@ -10,7 +9,7 @@ using ToolBox;
 
 namespace ProjetPerso.DAL.Services
 {
-    public class UserRepository : IRepository<int,User>
+    public class UserRepository
     {
         private Connection _Connection { get; set; }
 

@@ -50,8 +50,6 @@
     <Compile Include="Entities\Loisir.cs" />
     <Compile Include="Entities\Participant.cs" />
     <Compile Include="Entities\User.cs" />
-    <Compile Include="Interfaces\IEntity.cs" />
-    <Compile Include="Interfaces\IRepository.cs" />
     <Compile Include="Mappers\DbToEntityMapper.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

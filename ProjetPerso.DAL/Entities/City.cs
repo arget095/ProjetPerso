@@ -3,10 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using ProjetPerso.DAL.Interfaces;
 namespace ProjetPerso.DAL.Entities
 {
-    public class City : IEntity<int>
+    public class City
     {
         public int Id { get; set; }
         public string PostalCode { get; set; }

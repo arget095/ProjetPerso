@@ -1,5 +1,4 @@
 ﻿using ProjetPerso.DAL.Entities;
-using ProjetPerso.DAL.Interfaces;
 using ProjetPerso.DAL.Mappers;
 using System;
 using System.Collections.Generic;

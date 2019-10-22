@@ -1,5 +1,4 @@
-﻿using ProjetPerso.DAL.Interfaces;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -7,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace ProjetPerso.DAL.Entities
 {
-    public class User : IEntity<int>
+    public class User
     {
-
         public int Id { get; set; }
         public string Pseudo { get; set; }
         public string FirstName { get; set; }
