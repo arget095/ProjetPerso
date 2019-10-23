@@ -31,14 +31,14 @@ namespace ProjetPerso.DAL.Services
             cmd.AddParameter("@IdEvent", entity.IdEvent);
             cmd.AddParameter("@IdUser", entity.IdUser);
 
-            service.Update(entity.IdEvent, true);
+            service.UpdateAuto(entity.IdEvent, true);
 
             return (int)_Connection.ExecuteScalar(cmd);
         }
 
         public Participant Get(int id)
         {
-            Command cmd = new Command("SELECT * FROM Participant WHERE Id = @Id");//a corriger
+            Command cmd = new Command("SELECT * FROM Participant WHERE Id = @Id");
             cmd.AddParameter("@Id", id);
 
             return _Connection.ExecuteReader(cmd, DbToEntityMapper.ParticipantMapper).SingleOrDefault();
@@ -51,14 +51,14 @@ namespace ProjetPerso.DAL.Services
             return _Connection.ExecuteReader(cmd, DbToEntityMapper.ParticipantMapper);
         }
 
-        public void Delete(int ide,int idu)
+        public void Delete(int idevent, int iduser)
         {
             EventRepository service = new EventRepository();
             Command cmd = new Command("DELETE FROM Participant WHERE IdUser = @IdUser and IdEvent = @IdEvent");
-            cmd.AddParameter("@IdEvent", ide);
-            cmd.AddParameter("@IdUser", idu);
+            cmd.AddParameter("@IdEvent", idevent);
+            cmd.AddParameter("@IdUser", iduser);
 
-            service.Update(ide, false);
+            service.UpdateAuto(idevent, false);
             _Connection.ExecuteNonQuery(cmd);
         }
         public int CreatePartiAuto(int idevent,int iduser)

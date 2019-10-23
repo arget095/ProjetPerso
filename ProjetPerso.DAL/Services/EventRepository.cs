@@ -55,7 +55,7 @@ namespace ProjetPerso.DAL.Services
             return _Connection.ExecuteReader(cmd, DbToEntityMapper.EventMapper);
         }
 
-        public void Update(int id,bool actif)
+        public void UpdateAuto(int id,bool actif)
         {
             Event entity = Get(id);
             Command cmd = new Command("Update Event Set Participant = @plus_un WHERE IdEvent = @Id");
@@ -74,11 +74,12 @@ namespace ProjetPerso.DAL.Services
             _Connection.ExecuteNonQuery(cmd);
         }
 
-        public void Delete(int id)
+        public void Delete(int id,int iduser)
         {
             ParticipantRepository service = new ParticipantRepository();
-            Command cmd = new Command("DELETE FROM Event WHERE IdEvent = @Id");
+            Command cmd = new Command("DELETE FROM Event WHERE IdEvent = @Id and Admin = @Iduser");
             cmd.AddParameter("@Id", id);
+            cmd.AddParameter("@Iduser", iduser);
 
             service.DeleteAuto(id);
             _Connection.ExecuteNonQuery(cmd);

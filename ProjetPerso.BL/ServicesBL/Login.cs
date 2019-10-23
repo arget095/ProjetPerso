@@ -16,18 +16,20 @@ namespace ProjetPerso.BL.ServicesBL
 
         public int registration(UserBL entity)
         {
-            User user = new User();
-            user.FirstName = entity.FirstName;
-            user.LastName = entity.LastName;
-            user.Pseudo = entity.Pseudo;
-            user.Mail = entity.Mail;
-            user.Password = entity.Password;
+            User user = new User
+            {
+                FirstName = entity.FirstName,
+                LastName = entity.LastName,
+                Pseudo = entity.Pseudo,
+                Mail = entity.Mail,
+                Password = entity.Password
+            };
 
             user.Id = service.Create(user);
             return user.Id;
         }
 
-        public void login(string pseudo,string password)
+        public void Connect(string pseudo,string password)
         {
             if (service.CheckUserByPseudoAndPassword(pseudo,password))
             {

@@ -84,7 +84,7 @@ namespace ProjetPerso.DAL.Services
 
             IEnumerable<User> list = _Connection.ExecuteReader(cmd, DbToEntityMapper.UserMapper);
 
-            if (list.Count() > 0)return true;
+            if (list.Count() == 1)return true;
 
             return false;
         }
