@@ -31,7 +31,7 @@ namespace ProjetPerso.DAL
             //foreach (var item in service.GetAll())
             //{
             //    User1 = item;
-            //    Console.WriteLine(User1.Pseudo);
+            //    Console.WriteLine(User1.Password);
             //}
 
             //Console.WriteLine(User1.LastName);

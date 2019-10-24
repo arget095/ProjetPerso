@@ -18,7 +18,8 @@ namespace ProjetPerso.DAL.Mappers
                 FirstName = reader["FirstName"].ToString(),
                 LastName = reader["LastName"].ToString(),
                 Pseudo = reader["Pseudo"].ToString(),
-                Mail = reader["Mail"].ToString()
+                Mail = reader["Mail"].ToString(),
+                Password = reader["Password"].ToString()
                 
             };
         }
