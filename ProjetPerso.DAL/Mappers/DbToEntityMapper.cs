@@ -24,7 +24,7 @@ namespace ProjetPerso.DAL.Mappers
             };
         }
 
-        public static Event EventMapper(IDataReader reader)
+        public static Event EventMapper(IDataReader reader) /*permet de retrouver les données dans la DB*/
         {
             return new Event()
             {
@@ -39,7 +39,7 @@ namespace ProjetPerso.DAL.Mappers
             };
         }
 
-        public static Participant ParticipantMapper(IDataReader reader)
+        public static Participant ParticipantMapper(IDataReader reader) /*permet de retrouver les données dans la DB*/
         {
             return new Participant()
             {
@@ -49,7 +49,7 @@ namespace ProjetPerso.DAL.Mappers
             };
         }
 
-        public static Country CountryMapper(IDataReader reader)
+        public static Country CountryMapper(IDataReader reader) /*permet de retrouver les données dans la DB*/
         {
             return new Country()
             {
@@ -58,7 +58,7 @@ namespace ProjetPerso.DAL.Mappers
             };
         }
 
-        public static City CityMapper(IDataReader reader)
+        public static City CityMapper(IDataReader reader) /*permet de retrouver les données dans la DB*/
         {
             return new City()
             {
@@ -69,7 +69,7 @@ namespace ProjetPerso.DAL.Mappers
             };
         }
 
-        public static Loisir LoisirMapper(IDataReader reader)
+        public static Loisir LoisirMapper(IDataReader reader) /*permet de retrouver les données dans la DB*/
         {
             return new Loisir()
             {
@@ -79,7 +79,7 @@ namespace ProjetPerso.DAL.Mappers
             };
         }
 
-        public static Category CategoryMapper(IDataReader reader)
+        public static Category CategoryMapper(IDataReader reader) /*permet de retrouver les données dans la DB*/
         {
             return new Category()
             {

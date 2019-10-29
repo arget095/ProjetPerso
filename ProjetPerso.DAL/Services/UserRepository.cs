@@ -16,13 +16,18 @@ namespace ProjetPerso.DAL.Services
         public UserRepository()
         {
             #region sql formation
+            /*permet de me connecter a la base de donnée*/
             _Connection = new Connection(@"Data Source=TECHNOBEL\;Initial Catalog=ProjetPerso;User ID=sa;Password=test1234=", "System.Data.SqlClient");
             #endregion
             #region sql maison
             //_Connection = new Connection(@"Data Source = DESKTOP-8OP2MN3; Initial Catalog = ProjetPerso; Integrated Security = True", "System.Data.SqlClient");
             #endregion
         }
-
+        /// <summary>
+        /// permet de créé un nouvel utilisateur
+        /// </summary>
+        /// <param name="create"></param>
+        /// <returns></returns>
         public int Create(User entity)
         {
             Command cmd = new Command("AddUser", true);
@@ -35,7 +40,11 @@ namespace ProjetPerso.DAL.Services
 
             return (int)_Connection.ExecuteScalar(cmd);
         }
-
+        /// <summary>
+        /// Permet de récupérer l'user correspondant à l'id
+        /// </summary>
+        /// <param name="Get"></param>
+        /// <returns></returns>
         public User Get(int id)
         {
             Command cmd = new Command("SELECT * FROM [User] WHERE IdUser = @Id");
@@ -43,14 +52,21 @@ namespace ProjetPerso.DAL.Services
 
             return _Connection.ExecuteReader(cmd, DbToEntityMapper.UserMapper).SingleOrDefault();
         }
-
+        /// <summary>
+        /// Permet de récupérer tous les user
+        /// </summary>
+        /// <returns></returns>
         public IEnumerable<User> GetAll()
         {
             Command cmd = new Command("SELECT * FROM [User]");
 
             return _Connection.ExecuteReader(cmd, DbToEntityMapper.UserMapper);
         }
-
+        /// <summary>
+        /// Permet de modifier le mail
+        /// </summary>
+        /// <param name="UpdateMail"></param>
+        /// <returns></returns>
         public void UpdateMail(string pseudo,string newmail)
         {
             Command cmd = new Command("Update User Set Mail = @Newmail where Pseudo = @pseudo");
@@ -59,7 +75,11 @@ namespace ProjetPerso.DAL.Services
 
             _Connection.ExecuteNonQuery(cmd);
         }
-
+        /// <summary>
+        /// permet de modifier le mot-de-passe
+        /// </summary>
+        /// <param name="UpdatePassword"></param>
+        /// <returns></returns>
         public void UpdatePassword(string pseudo, string newpassword)
         {
             Command cmd = new Command("Update User Set Password = @Newpassword where Pseudo = @pseudo");
@@ -68,7 +88,11 @@ namespace ProjetPerso.DAL.Services
 
             _Connection.ExecuteNonQuery(cmd);
         }
-
+        /// <summary>
+        /// permet de supprimer l'user
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public void Delete(int id)
         {
             Command cmd = new Command("DELETE FROM [User] WHERE IdUser = @Id");

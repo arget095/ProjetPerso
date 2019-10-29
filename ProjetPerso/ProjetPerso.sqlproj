@@ -59,7 +59,6 @@
     <Folder Include="Properties" />
     <Folder Include="Table" />
     <Folder Include="Procédure" />
-    <Folder Include="Initial Data" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="Table\User.sql" />

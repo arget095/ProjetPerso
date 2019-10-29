@@ -14,16 +14,16 @@ namespace ProjetPerso.DAL
         {
             #region test avant event
             #region test userrepository
-            //UserRepository service = new UserRepository();
-            //User User1 = new User();
+            UserRepository service = new UserRepository();
+            User User1 = new User();
 
-            //User1.Pseudo = "Chouchou";
-            //User1.FirstName = "Goran";
-            //User1.LastName = "Nimegeers";
+            //User1.Pseudo = "Enchanteur";
+            //User1.FirstName = "Merlin";
+            //User1.LastName = "Pinpin";
             //User1.Password = "test1234=";
-            //User1.Mail = "Goran.Nimegeers@hotmail.com";
+            //User1.Mail = "merlin.archimede@hotmail.com";
 
-            //User1.Id = service.Create(User1);
+            User1.Id = service.Create(User1);
 
             //Console.WriteLine(User1.Id);
             //User1 = service.Get(3);
