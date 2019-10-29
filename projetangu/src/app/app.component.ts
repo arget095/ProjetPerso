@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { NbMenuItem } from '@nebular/theme';
-import { link } from 'fs';
+
 
 @Component({
   selector: 'app-root',
@@ -26,7 +26,7 @@ export class AppComponent {
       link:'/'
     },
     {
-      title:"parametre",
+      title:"paramètres",
       icon:'settings',
       link:'/'
     }

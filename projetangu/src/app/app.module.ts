@@ -4,14 +4,16 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NbThemeModule, NbLayoutModule, NbSidebarModule, NbCardModule, NbMenuModule } from '@nebular/theme';
+import { NbThemeModule, NbLayoutModule, NbSidebarModule, NbCardModule, NbMenuModule, NbInputModule, NbButtonModule } from '@nebular/theme';
 import { NbEvaIconsModule } from '@nebular/eva-icons';
 import { MoncoComponent } from './monco/monco.component';
+import { HeaderComponentComponent } from './header-component/header-component.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    MoncoComponent
+    MoncoComponent,
+    HeaderComponentComponent
   ],
   imports: [
     BrowserModule,
@@ -22,7 +24,10 @@ import { MoncoComponent } from './monco/monco.component';
     NbSidebarModule.forRoot(),
     NbEvaIconsModule,
     NbCardModule,
-    NbMenuModule.forRoot()
+    NbMenuModule.forRoot(),
+    NbInputModule,
+    NbButtonModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
