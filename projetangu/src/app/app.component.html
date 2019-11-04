@@ -1,0 +1,23 @@
+<nb-layout>
+
+  <nb-layout-header fixed class="HeaderLayout">
+  <!-- Insert header here -->
+    <app-header-component></app-header-component>
+  </nb-layout-header>
+
+  <nb-layout-column class="ColumnLayout">
+    <app-monco></app-monco>
+  </nb-layout-column>
+
+  <nb-sidebar class="Sidebar">
+      <nb-card>
+          <nb-menu [items]="items">
+          </nb-menu>
+      </nb-card>
+  </nb-sidebar>
+
+  <nb-layout-footer class="essai" >
+    <!-- Insert footer here -->
+  </nb-layout-footer>
+
+</nb-layout>

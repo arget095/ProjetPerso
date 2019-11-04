@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { BodyContentComponent } from './body-content.component';
+import { MoncoComponent } from './monco.component';
 
-describe('BodyContentComponent', () => {
-  let component: BodyContentComponent;
-  let fixture: ComponentFixture<BodyContentComponent>;
+describe('MoncoComponent', () => {
+  let component: MoncoComponent;
+  let fixture: ComponentFixture<MoncoComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ BodyContentComponent ]
+      declarations: [ MoncoComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(BodyContentComponent);
+    fixture = TestBed.createComponent(MoncoComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
