@@ -17,16 +17,18 @@ namespace ProjetPerso.DAL
             UserRepository service = new UserRepository();
             User User1 = new User();
 
-            //User1.Pseudo = "Enchanteur";
-            //User1.FirstName = "Merlin";
-            //User1.LastName = "Pinpin";
+            //User1.Pseudo = "Draal";
+            //User1.FirstName = "Robin";
+            //User1.LastName = "fanari";
             //User1.Password = "test1234=";
-            //User1.Mail = "merlin.archimede@hotmail.com";
+            //User1.Mail = "robin.fanari@hotmail.com";
 
-            User1.Id = service.Create(User1);
+            //User1.Id = service.Create(User1);
 
             //Console.WriteLine(User1.Id);
-            //User1 = service.Get(3);
+            //Console.ReadKey();
+            //Console.Clear();
+            User1 = service.Get(7);
 
             //foreach (var item in service.GetAll())
             //{
@@ -34,7 +36,7 @@ namespace ProjetPerso.DAL
             //    Console.WriteLine(User1.Password);
             //}
 
-            //Console.WriteLine(User1.LastName);
+            Console.WriteLine(User1.LastName);
             #endregion
             #region test Countryrepository
             //Country pays = new Country();

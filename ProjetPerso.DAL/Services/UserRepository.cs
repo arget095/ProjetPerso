@@ -17,10 +17,10 @@ namespace ProjetPerso.DAL.Services
         {
             #region sql formation
             /*permet de me connecter a la base de donnée*/
-            _Connection = new Connection(@"Data Source=TECHNOBEL\;Initial Catalog=ProjetPerso;User ID=sa;Password=test1234=", "System.Data.SqlClient");
+            //_Connection = new Connection(@"Data Source=TECHNOBEL\;Initial Catalog=ProjetPerso;User ID=sa;Password=test1234=", "System.Data.SqlClient");
             #endregion
             #region sql maison
-            //_Connection = new Connection(@"Data Source = DESKTOP-8OP2MN3; Initial Catalog = ProjetPerso; Integrated Security = True", "System.Data.SqlClient");
+            _Connection = new Connection(@"Data Source = DESKTOP-8OP2MN3; Initial Catalog = ProjetPerso; Integrated Security = True", "System.Data.SqlClient");
             #endregion
         }
         /// <summary>
